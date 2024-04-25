@@ -16,6 +16,8 @@ jobs:
         with:
           node-version: "20.x"
 
-      - name: Dummy Step
-        run: |
-          echo 'This is a dummy step'
+      - name: sha from context
+        run: echo ${{ github.event.pull_request.head.sha }}
+
+      - name: sha from env var
+        run: echo $GITHUB_SHA
