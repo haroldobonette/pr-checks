@@ -1,4 +1,4 @@
-name: Pull Request Validate
+o name: Pull Request Validate
 
 on:
   pull_request:
@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: "20.x"
 
-      - name: Login to Salesforce
+      - name: Dummy Step
         run: |
-          sf login org jwt --username ${{vars.SF_DEPLOY_USER}} --jwt-key-file ./cert.key --client-id ${{secrets.CLIENT_ID}} --alias ${{ github.ref_name }}
-          sf org list
+          echo 'This is a dummy step'
